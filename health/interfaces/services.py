@@ -1,6 +1,5 @@
 """Interfaces for health record services."""
 from flask import Blueprint, request, jsonify
-
 from health.application.services import HealthRecordApplicationService
 from iam.interfaces.services import authenticate_request
 
@@ -8,7 +7,7 @@ health_api = Blueprint("health_api", __name__)
 
 health_record_service = HealthRecordApplicationService()
 
-@health_api.route("/api/v1/health-records", methods=["POST"])
+@health_api.route("/api/v1/health-monitoring/data-records", methods=["POST"])
 def create_health_record():
     """Create a new health record.
     This endpoint allows devices to submit health records with their device ID,
