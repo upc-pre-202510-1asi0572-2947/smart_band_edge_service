@@ -1,6 +1,6 @@
 """Interfaces for IAM services."""
-from flask import request, jsonify, Response
-from flask.sansio.blueprints import Blueprint
+from flask import Blueprint, request, jsonify, Response
+
 from iam.application.services import AuthApplicationService
 
 """Blueprint for IAM service interfaces."""
