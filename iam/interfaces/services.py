@@ -1,5 +1,5 @@
 """Interfaces for IAM services."""
-from flask import request, jsonify
+from flask import request, jsonify, Response
 from flask.sansio.blueprints import Blueprint
 from iam.application.services import AuthApplicationService
 
@@ -9,7 +9,7 @@ iam_api = Blueprint('iam_api', __name__)
 """Initialize dependencies for IAM service."""
 auth_service = AuthApplicationService()
 
-def authenticate_request():
+def authenticate_request() -> None | tuple[Response, int]:
     """Authenticate the incoming request using device ID and API key.
     This function checks for the presence of 'device_id' in the request JSON
     and 'X-API-Key' in the request headers.
