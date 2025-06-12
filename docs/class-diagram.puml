@@ -82,6 +82,7 @@ package "IAM Bounded Context" #FFEBDE {
       +__init__()
       +authenticate(device_id, api_key): bool
       +get_or_create_test_device(): Device
+      +get_by_id_and_api_key(self, device_id, api_key): Optional[Device]
     }
   }
 
